@@ -1,4 +1,4 @@
-# Best Practices for Hiring World Class Independent Consultants
+# Contracting World Class Independent Consultants
 
 ## Identify Your Needs
 

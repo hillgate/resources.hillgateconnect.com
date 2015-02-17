@@ -12,7 +12,7 @@ spending at work, the quality of your output or and your stress level. Once
 you’ve accepted that there is a problem, you can move to figuring out how to
 fix it.
 
-Most problems break down into toe two categories:
+Most problems break down into two categories:
 
 ### 1. Skills or Knowledge Gaps
 

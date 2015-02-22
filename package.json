@@ -1,0 +1,64 @@
+{
+  "name": "resources.hillgateconnect.com",
+  "version": "0.0.1",
+  "description": "A public respository for Hillgate resources",
+  "homepage": "http://resources.hillgateconnect.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hillgate/resources.hillgateconnect.com"
+  },
+  "bugs": {
+    "url": "git://github.com/hillgate/resources.hillgateconnect.com/issues"
+  },
+  "main": "./src/index.js",
+  "keywords": [
+    "hillgate",
+    "react"
+  ],
+  "scripts": {
+    "postinstall": "node node_modules/bower/bin/bower install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Neary (adamrneary)",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.11.0"
+  },
+  "devDependencies": {
+    "adamrneary-base-css": "0.0.1",
+    "bootstrap": "^3.3.2",
+    "bower": "^1.3.12",
+    "browserify": "^5.8.0",
+    "coffee-script": "^1.9.1",
+    "del": "^0.1.3",
+    "ecstatic": "^0.5.4",
+    "gulp": "^3.8.6",
+    "gulp-autowatch": "0.0.1",
+    "gulp-cached": "^1.0.1",
+    "gulp-gh-pages": "^0.3.3",
+    "gulp-jshint": "^1.7.1",
+    "gulp-less": "^3.0.0",
+    "gulp-livereload": "^2.1.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sourcemaps": "^1.1.0",
+    "jshint": "^2.4.1",
+    "jshint-stylish": "^0.4.0",
+    "jsxhint": "^0.4.15",
+    "merge-stream": "^0.1.5",
+    "mocha": "^1.20.1",
+    "moment": "^2.8.3",
+    "react-article-metadata": "0.0.2",
+    "react-gist-embed": "0.0.2",
+    "react-markdown-file": "0.0.2",
+    "reactify": "^0.14.0",
+    "rimraf": "^2.2.8",
+    "run-sequence": "^1.0.1",
+    "should": "^4.0.4",
+    "suitcss": "^0.6.0",
+    "suitcss-components-grid": "^2.0.1",
+    "suitcss-utils": "^0.10.1",
+    "vinyl-buffer": "0.0.0",
+    "vinyl-source-stream": "^0.1.1",
+    "watchify": "^1.0.0"
+  }
+}

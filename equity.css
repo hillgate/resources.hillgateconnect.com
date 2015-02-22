@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_caps_a_bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-variant:small-caps;
+}
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_caps_a_regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-variant:small-caps;
+}
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_caps_b_bold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-variant:small-caps;
+}
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_caps_b_regular-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-variant:small-caps;
+}
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_text_a_bold_italic-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_text_a_bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_text_a_italic-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_text_a_regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_text_b_bold_italic-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_text_b_bold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_text_b_italic-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Equity';
+    src: url('../fonts/equity_text_b_regular-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}

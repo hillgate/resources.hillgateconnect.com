@@ -123,6 +123,7 @@ gulp.task 'dist', ->
     .pipe(usemin(
       css: [minifyCss(), rev()]
       js: [uglify(), rev()]
+      js1: [uglify(), rev()]
       html: [ minifyHtml(empty: true) ]
     ))
     .pipe(gulp.dest(paths.dist))

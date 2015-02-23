@@ -7,10 +7,12 @@ del = require('del')
 
 # css
 less = require('gulp-less')
+minifyCss = require('gulp-minify-css')
 
 # js
 watchify = require('watchify')
 browserify = require('browserify')
+uglify = require('gulp-uglify')
 # coffeeify = require('coffeeify')
 # reactify = require('reactify')
 # sourcemaps = require('gulp-sourcemaps')
@@ -20,7 +22,9 @@ http = require('http')
 path = require('path')
 ecstatic = require('ecstatic')
 liveReload = require('gulp-livereload')
-ghPages = require('gulp-gh-pages')
+usemin = require('gulp-usemin')
+minifyHtml = require('gulp-minify-html')
+rev = require('gulp-rev')
 
 join = ->
   Array::slice.call(arguments).join ''
@@ -34,6 +38,7 @@ paths.static = [
   'bower_components/jquery/dist/jquery.js'
   'bower_components/jquery-sticky/jquery.sticky.js'
   'bower_components/uikit/js/uikit.js'
+
   join('!', paths.src, '**/*.less')
   join('!', paths.src, '**/*.js')
   join('!', paths.src, '**/*.coffee')
@@ -108,55 +113,28 @@ gulp.task 'default', (callback) ->
     'watch'
   ], callback
 
-# // dist
-# // ===========================================================================
-# Pretty simple for now.
-gulp.task 'dist', ->
-  gulp.src(join(paths.tmp, '**/*')).pipe gulp.dest(paths.dist)
-#
-# gulp.task('dist:css', function(){
-#   gulp.src(join(paths.src, 'index.less'))
-#     .pipe(cached('dist-css'))
-#     .pipe(less())
-#     .pipe(rename(join(libName, '.css')))
-#     .pipe(gulp.dest(paths.dist))
-# });
-#
-# var distBundler = watchify(
-#   browserify(join('./', paths.src, 'index.js'), {
-#     cache: bundleCache,
-#     packageCache: pkgCache,
-#     fullPaths: true,
-#     standalone: libName,
-#     debug: true
-#   })
-# );
-# distBundler.transform(reactify);
-#
-# gulp.task('dist:js', function(){
-#   var browserifyStream = distBundler.bundle()
-#     // browserify -> gulp transfer
-#     .pipe(source(join(libName, '.js')))
-#     .pipe(buffer())
-#     .pipe(cached('dist-js'))
-#     .pipe(sourcemaps.init({loadMaps: true}))
-#     .pipe(sourcemaps.write('.'))
-#     .pipe(gulp.dest(paths.dist));
-#
-#   var lintStream = gulp.src(paths.js)
-#     .pipe(jshint())
-#     .pipe(jshint.reporter('jshint-stylish'));
-#
-#   return merge(browserifyStream, lintStream);
-# });
-#
-# gulp.task('dist', ['dist:css', 'dist:js']);
+
+
+
 
 # deploy
 # ============================================================================
-gulp.task 'gh-pages', ->
-  gulp.src(join(paths.dist, '**/*'))
-    .pipe(ghPages())
+
+gulp.task 'dist:clean', (cb) ->
+  del paths.dist, cb
+
+gulp.task 'dist', ->
+  gulp.src(join(paths.tmp, '*.html'))
+    .pipe(usemin(
+      css: [minifyCss(), rev()]
+      js: [uglify(), rev()]
+      html: [ minifyHtml(empty: true) ]
+    ))
+    .pipe(gulp.dest(paths.dist))
+
+gulp.task 'deploy:html', ->
+
+gulp.task 'deploy:revved', ->
 
 gulp.task 'deploy', (callback) ->
-  runSequence [ 'dist' ], [ 'gh-pages' ], callback
+  runSequence [ 'dist' ], [ 'deploy:html', 'deploy:revved' ], callback

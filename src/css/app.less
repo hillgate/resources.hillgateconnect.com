@@ -2,67 +2,44 @@
 @import 'variables';
 @import '../../node_modules/adamrneary-base-css/css/typography';
 
-.navbar {
-  font-family: @font-family-sans-serif;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 14px;
-}
-.navbar-btn {
-margin-top: 5.5px;
+.Body--BelowHeader {
+  padding-top: 51px;
 }
 
 .HeaderLogo {
   height: 28px;
 }
 
-.btn {
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 700;
-}
-.btn-default {
-  color: @gray;
-}
-
-body {
-  padding-top: 51px;
-}
-
-h2:first-child {
-  margin-top: 0;
-}
-
-.page-header {
+.PageHeader {
   margin-top: 96px;
-  margin-bottom: 96px;
-  border-bottom: 0;
-}
-.page-title {
-  padding-top: 10px;
-  margin-top: 5px;
-  border-top: 2px solid @gray-light;
+  margin-bottom: 124px;
   font-family: @font-family-sans-serif;
   font-weight: 700;
 }
-
-.page-subtitle {
+.PageHeader--Title {
+  margin-top: 5px;
+  padding-top: 10px;
+  border-top: 2px solid @gray-light;
+}
+.PageHeader--Subtitle {
   margin-bottom: 0;
   color: @gray-light;
-  font-family: @font-family-sans-serif;
   font-size: ceil((@font-size-base * 1.25)); // ~30px
-  font-weight: 700;
 }
-
-.page-subtitle a {
+.PageHeader--Subtitle a {
   color: @gray-light
 }
-.page-subtitle a:hover {
+.PageHeader--Subtitle a:hover {
   text-decoration: underline;
 }
 
 
-.toc {
+
+
+
+
+
+.TableOfContents {
   font-family: @font-family-sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -71,17 +48,15 @@ h2:first-child {
   font-weight: 700;
   text-transform: uppercase;
 }
-
-ul.TableOfContents {
-  list-style: none;
+.TableOfContents ul {
   padding-left: 0;
+  list-style: none;
 }
 
 .TableOfContents li a {
   position: relative;
   display: inline-block;
 }
-
 .TableOfContents li a.is-active::before {
   content: '';
   display: block;
@@ -95,6 +70,12 @@ ul.TableOfContents {
 }
 
 
+.ArticleContent h2:first-child {
+  margin-top: 0;
+}
+
+
+
 .Footer {
   margin-top: 250px;
   margin-bottom: 250px;
@@ -106,4 +87,19 @@ ul.TableOfContents {
 .FooterNotes {
   font-family: @font-family-sans-serif;
   font-size: 14px;
+}
+
+// BOOTSTRAP ADJUSTMENTS
+.btn {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.navbar {
+  font-family: @font-family-sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+}
+.navbar-btn {
+margin-top: 5.5px;
 }

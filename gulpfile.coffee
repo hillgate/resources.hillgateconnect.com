@@ -28,6 +28,8 @@ liveReload = require('gulp-livereload')
 usemin = require('gulp-usemin')
 minifyHtml = require('gulp-minify-html')
 rev = require('gulp-rev')
+awspublish = require('gulp-awspublish')
+awspublishRouter = require("gulp-awspublish-router")
 
 join = ->
   Array::slice.call(arguments).join ''
@@ -128,9 +130,23 @@ gulp.task 'dist', ->
     ))
     .pipe(gulp.dest(paths.dist))
 
-gulp.task 'deploy:html', ->
+publisher = awspublish.create bucket: 'resources.hillgateconnect.com'
+gulp.task 'publish:html', ->
+  gulp.src("#{paths.dist}/**/*.html")
+    .pipe(awspublish.gzip())
+    .pipe(publisher.publish('Cache-Control': 'max-age=600')) # 10 minutes
+    .pipe(publisher.cache())
+    .pipe(awspublish.reporter())
 
-gulp.task 'deploy:revved', ->
+gulp.task 'publish:else', ->
+  gulp.src([
+    "#{paths.dist}/**/*"
+    "!#{paths.dist}/**/*.html"
+  ])
+    .pipe(awspublish.gzip())
+    .pipe(publisher.publish('Cache-Control': 'max-age=315360000')) # 10 years
+    .pipe(publisher.cache())
+    .pipe(awspublish.reporter())
 
 gulp.task 'deploy', (callback) ->
-  runSequence [ 'dist' ], [ 'deploy:html', 'deploy:revved' ], callback
+  runSequence [ 'publish:html', 'publish:else' ], callback

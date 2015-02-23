@@ -8,3 +8,5 @@ coverage
 *.orig
 tmp/
 dist/
+
+.awspublish-resources.hillgateconnect.com

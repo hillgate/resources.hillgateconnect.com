@@ -1,5 +1,8 @@
 # gulp
 gulp = require('gulp')
+gutil = require('gulp-util')
+source = require('vinyl-source-stream')
+buffer = require('vinyl-buffer')
 cached = require('gulp-cached')
 rename = require('gulp-rename')
 runSequence = require('run-sequence')
@@ -13,9 +16,9 @@ minifyCss = require('gulp-minify-css')
 watchify = require('watchify')
 browserify = require('browserify')
 uglify = require('gulp-uglify')
-# coffeeify = require('coffeeify')
-# reactify = require('reactify')
-# sourcemaps = require('gulp-sourcemaps')
+coffeeify = require('coffeeify')
+reactify = require('reactify')
+sourcemaps = require('gulp-sourcemaps')
 
 # dev/deploy
 http = require('http')
@@ -46,9 +49,6 @@ paths.static = [
 paths.css = join(paths.src, 'css/*.less')
 paths.js = join(paths.src, 'js/app.coffee')
 
-bundleCache = {}
-pkgCache = {}
-
 # development
 # ============================================================================
 gulp.task 'dev:clean', (cb) ->
@@ -68,30 +68,27 @@ gulp.task 'dev:css', ->
     .pipe(gulp.dest(join(paths.tmp, 'css/')))
     .pipe(liveReload())
 
-# appBundler = watchify(browserify(
-#   entries: './' + paths.js
-#   cache: bundleCache
-#   packageCache: pkgCache
-#   fullPaths: true
-#   standalone: 'demo'
-#   debug: true))
-#
-# appBundler.transform coffeeify
-# # appBundler.exclude('jquery');
-#
-# gulp.task 'dev:js', ->
-#   appBundler.bundle()
-#     .pipe(gulp.src('app.js'))
-#     .pipe(cached('app-js'))
-#     .pipe(sourcemaps.init(loadMaps: true))
-#     .pipe(sourcemaps.write('.'))
-#     .pipe(gulp.dest(join(paths.tmp, 'js/')))
-#     .pipe(liveReload())
+bundler = watchify browserify "./#{paths.js}", watchify.args
+bundler.transform coffeeify
+bundler.exclude('jquery')
+
+bundle = ->
+  bundler.bundle()
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .pipe(source('bundle.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init(loadMaps: true))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(join(paths.tmp, 'js/')))
+    .pipe(liveReload())
+
+gulp.task 'dev:js', bundle
 
 gulp.task 'dev', (callback) ->
   runSequence [ 'dev:clean' ], [
     'dev:static'
     'dev:css'
+    'dev:js'
   ], callback
 
 gulp.task 'server', (cb) ->
@@ -102,9 +99,7 @@ gulp.task 'server', (cb) ->
 
 gulp.task 'watch', ->
   gulp.watch paths.css, [ 'dev:css' ]
-  # appBundler.on('update', function(){
-  #   gulp.start('dev:js');
-  # });
+  bundler.on 'update', bundle
   gulp.watch paths.static, [ 'dev:static' ]
 
 gulp.task 'default', (callback) ->

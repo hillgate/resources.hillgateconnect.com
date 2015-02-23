@@ -29,11 +29,8 @@ paths =
   src: 'src/'
   dist: 'dist/'
   tmp: 'tmp/'
-  fonts: 'node_modules/adamrneary-base-css/fonts/*'
 paths.static = [
   join(paths.src, '**/*')
-  'node_modules/adamrneary-base-css/css/concourse.css'
-  'node_modules/adamrneary-base-css/css/equity.css'
   'bower_components/jquery/dist/jquery.js'
   'bower_components/jquery-sticky/jquery.sticky.js'
   'bower_components/uikit/js/uikit.js'
@@ -57,10 +54,6 @@ gulp.task 'dev:static', ->
     .pipe(cached('static'))
     .pipe(gulp.dest(paths.tmp))
     .pipe(liveReload())
-
-gulp.task 'dev:fonts', ->
-  gulp.src(paths.fonts)
-    .pipe(gulp.dest(join(paths.tmp, 'fonts/')))
 
 gulp.task 'dev:css', ->
 
@@ -93,7 +86,6 @@ gulp.task 'dev:css', ->
 gulp.task 'dev', (callback) ->
   runSequence [ 'dev:clean' ], [
     'dev:static'
-    'dev:fonts'
     'dev:css'
   ], callback
 
@@ -117,11 +109,10 @@ gulp.task 'default', (callback) ->
   ], callback
 
 # // dist
-# // ============================================================================
+# // ===========================================================================
 # Pretty simple for now.
 gulp.task 'dist', ->
   gulp.src(join(paths.tmp, '**/*')).pipe gulp.dest(paths.dist)
-  return
 #
 # gulp.task('dist:css', function(){
 #   gulp.src(join(paths.src, 'index.less'))

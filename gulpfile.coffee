@@ -127,6 +127,10 @@ gulp.task 'dist', ->
     ))
     .pipe(gulp.dest(paths.dist))
 
+gulp.task 'content', ->
+  gulp.src(join(paths.tmp, 'content/**/*'))
+    .pipe(gulp.dest(join(paths.dist, 'content')))
+
 publisher = awspublish.create bucket: 'resources.hillgateconnect.com'
 gulp.task 'publish:html', ->
   gulp.src("#{paths.dist}/**/*.html")
@@ -146,4 +150,9 @@ gulp.task 'publish:else', ->
     .pipe(awspublish.reporter())
 
 gulp.task 'deploy', (callback) ->
-  runSequence [ 'publish:html', 'publish:else' ], callback
+  runSequence(
+    ['dist:clean']
+    ['dist', 'content']
+    ['publish:html', 'publish:else']
+    callback
+  )

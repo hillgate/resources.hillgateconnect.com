@@ -1,0 +1,24 @@
+{
+  "name": "resources.hillgateconnect.com",
+  "version": "0.0.0",
+  "homepage": "https://github.com/hillgate/resources.hillgateconnect.com",
+  "authors": [
+    "Adam Neary <adam@neary.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "~1.11.3",
+    "jquery-sticky": "~1.0.1",
+    "uikit": "~2.17.0"
+  }
+}

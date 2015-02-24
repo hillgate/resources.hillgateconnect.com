@@ -28,7 +28,6 @@ usemin = require('gulp-usemin')
 minifyHtml = require('gulp-minify-html')
 rev = require('gulp-rev')
 awspublish = require('gulp-awspublish')
-awspublishRouter = require("gulp-awspublish-router")
 
 join = ->
   Array::slice.call(arguments).join ''

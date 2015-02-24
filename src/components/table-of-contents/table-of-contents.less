@@ -1,0 +1,29 @@
+.TableOfContents {
+  font-family: @font-family-sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+.TableOfContents--label {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.TableOfContents ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.TableOfContents li a {
+  position: relative;
+  display: inline-block;
+}
+.TableOfContents li a.is-active::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background: @brand-primary;
+  opacity: 0.66;
+  width: 2px;
+  top: 0;
+  bottom: 0;
+  right: calc( 100% + 8 );
+}

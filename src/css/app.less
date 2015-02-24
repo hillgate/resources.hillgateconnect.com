@@ -2,92 +2,12 @@
 @import 'variables';
 @import '../../node_modules/adamrneary-base-css/css/typography';
 
-.Body--BelowHeader {
-  padding-top: 51px;
-}
-
-.HeaderLogo {
-  height: 28px;
-}
-
-.PageHeader {
-  margin-top: 96px;
-  margin-bottom: 124px;
-  font-family: @font-family-sans-serif;
-  font-weight: 700;
-}
-.PageHeader--Title {
-  margin-top: 5px;
-  padding-top: 10px;
-  border-top: 2px solid @gray-light;
-}
-.PageHeader--Subtitle {
-  margin-bottom: 0;
-  color: @gray-light;
-  font-size: ceil((@font-size-base * 1.25)); // ~30px
-}
-.PageHeader--Subtitle a {
-  color: @gray-light
-}
-.PageHeader--Subtitle a:hover {
-  text-decoration: underline;
-}
-
-
-
-
-
-
-
-.TableOfContents {
-  font-family: @font-family-sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-}
-.TableOfContents--label {
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.TableOfContents ul {
-  padding-left: 0;
-  list-style: none;
-}
-
-.TableOfContents li a {
-  position: relative;
-  display: inline-block;
-}
-.TableOfContents li a.is-active::before {
-  content: '';
-  display: block;
-  position: absolute;
-  background: @brand-primary;
-  opacity: 0.66;
-  width: 2px;
-  top: 0;
-  bottom: 0;
-  right: calc( 100% + 8 );
-}
-
-
-.ArticleContent h2:first-child {
-  margin-top: 0;
-}
-
-
-
-.Footer {
-  margin-top: 250px;
-  margin-bottom: 250px;
-}
-.FooterLogo {
-  height: 48px;
-  margin-bottom: 10px;
-}
-.FooterNotes {
-  font-family: @font-family-sans-serif;
-  font-size: 14px;
-}
+@import '../components/article-content/article-content';
+@import '../components/footer/footer';
+@import '../components/nav/nav';
+@import '../components/page-header/page-header';
+@import '../components/page-wrapper/page-wrapper';
+@import '../components/table-of-contents/table-of-contents';
 
 // BOOTSTRAP ADJUSTMENTS
 .btn {

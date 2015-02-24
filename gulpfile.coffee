@@ -16,7 +16,6 @@ minifyCss = require('gulp-minify-css')
 watchify = require('watchify')
 browserify = require('browserify')
 uglify = require('gulp-uglify')
-coffeeify = require('coffeeify')
 reactify = require('reactify')
 sourcemaps = require('gulp-sourcemaps')
 
@@ -46,10 +45,9 @@ paths.static = [
 
   join('!', paths.src, '**/*.less')
   join('!', paths.src, '**/*.js')
-  join('!', paths.src, '**/*.coffee')
 ]
 paths.css = join(paths.src, 'css/*.less')
-paths.js = join(paths.src, 'js/app.coffee')
+paths.js = join(paths.src, 'js/app.js')
 
 # development
 # ============================================================================
@@ -71,7 +69,7 @@ gulp.task 'dev:css', ->
     .pipe(liveReload())
 
 bundler = watchify browserify "./#{paths.js}", watchify.args
-bundler.transform coffeeify
+bundler.transform reactify
 bundler.exclude('jquery')
 
 bundle = ->

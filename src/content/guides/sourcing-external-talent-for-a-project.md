@@ -36,7 +36,7 @@ The experience-level depends on the type of work you need. If you want someone t
 
 You should have a clear idea of what you’re looking for here. If you’re doing a due diligence project, then you’ll want someone who has worked in Investment Banking/Corporate Development (link to Ag project). If you’re researching a specific region/industry then having someone with relevant experience is important (link to China project).
 
-##	Industry Experience
+##	Industry experience
 
 It is important to consider how direct and granular you need the experience to be. Do you prefer someone who worked in an industry as an advisor (such as a banker or consultant) or directly in the industry? Beware of the unicorn demands!
 
@@ -62,7 +62,7 @@ I’d recommend Hillgate or RocketLawyer.
 
 I’d recommend Gun.io or Pickcrew.com.
 
-##	Data Science
+##	Data science
 
 I’d recommend Kaggle or Experfy.
 

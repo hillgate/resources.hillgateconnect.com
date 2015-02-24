@@ -100,7 +100,7 @@ Congratulations, you’re almost there! Getting here means you’ve found the ri
 
 As soon as you know you will be looking to bring in an external resource, you should start working to ensure that you have these documents and processes in place. This is where the benefit of a third-party marketplace (like Hillgate) is clear. You can engage the company as a vendor and, once completed, you can reengage consultants through the same channel without the hassle of additional paperwork.
 
-##	Terms and conditions (NDAs,etc)
+##	Terms and conditions (NDAs, etc.)
 
 This is usually the core document(s) that covers confidentiality, expectations and explains how various situations are dealt with. It will explain the broader relationship between two parties. You will want to make sure you have something in place prior to starting your project.
 

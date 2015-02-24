@@ -6,6 +6,7 @@ var ArticleContent = require('../article-content/article-content.jsx');
 
 var Article = React.createClass({
   render: function() {
+    var articleTitle = 'Sourcing external talent for a project';
     var tocData = [
       {anchor: "identify-your-needs", text: "Identify Your Needs"},
       {anchor: "define-a-project-brief", text: "Define a Project Brief"},
@@ -18,7 +19,7 @@ var Article = React.createClass({
         <div className="container">
           <div className="row">
             <div className="col-md-9 col-md-offset-3">
-              <PageHeader />
+              <PageHeader title={articleTitle}/>
             </div>
           </div>
           <div className="row">

@@ -6,7 +6,7 @@ var ArticleContent = React.createClass({
   render: function() {
     return (
       <div className="ArticleContent entry-content">
-        <MarkdownFile fileName='content/new.md'/>
+        <MarkdownFile fileName='content/guides/sourcing-external-talent-for-a-project.md'/>
       </div>
     );
   }

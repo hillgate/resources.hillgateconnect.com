@@ -17,8 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-ui": "~1.11.3",
-    "jquery-sticky": "~1.0.1",
-    "uikit": "~2.17.0"
+    "jquery-sticky": "~1.0.1"
   }
 }

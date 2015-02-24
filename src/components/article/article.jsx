@@ -6,6 +6,13 @@ var ArticleContent = require('../article-content/article-content.jsx');
 
 var Article = React.createClass({
   render: function() {
+    var tocData = [
+      {anchor: "identify-your-needs", text: "Identify Your Needs"},
+      {anchor: "define-a-project-brief", text: "Define a Project Brief"},
+      {anchor: "define-your-ideal-candidate", text: "Define Your Ideal Candidate"},
+      {anchor: "prepare-the-specifics", text: "Prepare the Specifics"},
+      {anchor: "organize-the-paperwork", text: "Organize the Paperwork"}
+    ];
     return (
       <article className="hentry">
         <div className="container">
@@ -16,7 +23,7 @@ var Article = React.createClass({
           </div>
           <div className="row">
             <div className="col-md-4">
-              <TableOfContents />
+              <TableOfContents data={tocData}/>
             </div>
             <div className="col-md-8">
               <ArticleContent />

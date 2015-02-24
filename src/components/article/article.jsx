@@ -8,11 +8,11 @@ var Article = React.createClass({
   render: function() {
     var articleTitle = 'Sourcing external talent for a project';
     var tocData = [
-      {anchor: "identify-your-needs", text: "Identify Your Needs"},
-      {anchor: "define-a-project-brief", text: "Define a Project Brief"},
-      {anchor: "define-your-ideal-candidate", text: "Define Your Ideal Candidate"},
-      {anchor: "prepare-the-specifics", text: "Prepare the Specifics"},
-      {anchor: "organize-the-paperwork", text: "Organize the Paperwork"}
+      {anchor: "identify-and-communicate-the-need", text: "Identify and communicate the need"},
+      {anchor: "define-the-candidate-criteria", text: "Define the candidate criteria"},
+      {anchor: "find-candidates", text: "Find candidates"},
+      {anchor: "prepare-the-other-stuff-", text: "Prepare the \"other stuff\""},
+      {anchor: "organize-the-paperwork", text: "Organize the paperwork"}
     ];
     return (
       <article className="hentry">

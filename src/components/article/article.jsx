@@ -6,7 +6,7 @@ var ArticleContent = require('../article-content/article-content.jsx');
 
 var Article = React.createClass({
   render: function() {
-    var articleTitle = 'Sourcing external talent for a project';
+    var articleTitle = 'Sourcing External Talent for a Project';
     var tocData = [
       {anchor: "identify-and-communicate-the-need", text: "Identify and communicate the need"},
       {anchor: "define-the-candidate-criteria", text: "Define the candidate criteria"},

@@ -56,23 +56,23 @@ The most efficient way to staff a project is to go to a marketplace that special
 
 ##	Strategic business or legal advice
 
-I’d recommend [Hillgate](www.hillgateconnec.com) or [RocketLawyer](https://www.rocketlawyer.com).
+I’d recommend [Hillgate](https://www.hillgateconnect.com/) or [RocketLawyer](https://www.rocketlawyer.com).
 
 ##	Development
 
-I’d recommend [Gun.io](https://gun.io) or [Crew](www.pickcrew.com).
+I’d recommend [Gun.io](https://gun.io) or [Crew](https://pickcrew.com/).
 
 ##	Data science
 
-I’d recommend [Kaggle](www.kaggle.com) or [Experfy](https://www.experfy.com).
+I’d recommend [Kaggle](http://www.kaggle.com/) or [Experfy](https://www.experfy.com).
 
 ##	Tactical/Admin
 
-I recommend [Odesk/Elance](www.odesk.com) or [Peopleperhour.com](www.peopleperhour.com).
+I recommend [Odesk/Elance](https://www.odesk.com/) or [Peopleperhour.com](http://www.peopleperhour.com).
 
 ##	Design
 
-I’d recommend [Design Crowd](www.designcrowd.com) or [99designs](99designs.com).
+I’d recommend [Design Crowd](http://www.designcrowd.com/) or [99designs](http://99designs.com/).
 
 #	Prepare the “other stuff”
 
@@ -98,7 +98,7 @@ Ideally, you should organize a payment schedule that benefits both parties. This
 
 Congratulations, you’re almost there! Getting here means you’ve found the right person and agreed to the terms of working together. However, the paperwork stage is often where things grind to a halt. You might not have a template or previous example to work with. You might need to work with your internal stakeholders (Procurement, Legal, HR). This can really hold up the process, especially if you’re trying to contract with an individual.
 
-As soon as you know you will be looking to bring in an external resource, you should start working to ensure that you have these documents and processes in place. This is where the benefit of a third-party marketplace (like [Hillgate](www.hillgateconnect.com)) is clear. You can engage the company as a vendor and, once completed, you can reengage consultants through the same channel without the hassle of additional paperwork.
+As soon as you know you will be looking to bring in an external resource, you should start working to ensure that you have these documents and processes in place. This is where the benefit of a third-party marketplace (like [Hillgate](https://www.hillgateconnect.com/)) is clear. You can engage the company as a vendor and, once completed, you can reengage consultants through the same channel without the hassle of additional paperwork.
 
 ##	Terms and conditions (NDAs, etc.)
 

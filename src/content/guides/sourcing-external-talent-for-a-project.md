@@ -14,7 +14,7 @@ Be clear about the specific workstreams, expectations and deliverables 	that you
 
 ##	Identify the workstreams
 
-Most projects have multiple subcomponents. You should be able to break down these components into 1-3 main tasks. These are your titles. You then fill in 3-5 specific items under each of these. You can see an example here. The goal is to provide enough information to candidates so that they have a sense of the type and amount of work required for this work.
+Most projects have multiple subcomponents. You should be able to break down these components into 1-3 main tasks. These are your titles. You then fill in 3-5 specific items under each of these. You can see an example [here](https://www.hillgateconnect.com/project/10567416). The goal is to provide enough information to candidates so that they have a sense of the type and amount of work required for this work.
 
 ##	Identify the deliverables
 
@@ -56,27 +56,27 @@ The most efficient way to staff a project is to go to a marketplace that special
 
 ##	Strategic business or legal advice
 
-I’d recommend Hillgate or RocketLawyer.
+I’d recommend [Hillgate](www.hillgateconnec.com) or [RocketLawyer](https://www.rocketlawyer.com).
 
 ##	Development
 
-I’d recommend Gun.io or Pickcrew.com.
+I’d recommend [Gun.io](https://gun.io) or [Crew](www.pickcrew.com).
 
 ##	Data science
 
-I’d recommend Kaggle or Experfy.
+I’d recommend [Kaggle](www.kaggle.com) or [Experfy](https://www.experfy.com).
 
 ##	Tactical/Admin
 
-Odesk/Elance or Peopleperhour.com.
+I recommend [Odesk/Elance](www.odesk.com) or [Peopleperhour.com](www.peopleperhour.com).
 
 ##	Design
 
-I’d recommend Design Crowd or 99designs.
+I’d recommend [Design Crowd](www.designcrowd.com) or [99designs](99designs.com).
 
 #	Prepare the “other stuff”
 
-Perhaps contrary to the name, this section is important. Unfortunately, these details are often over-looked. That’s because it can be awkward to discuss some of the details, especially the budget. Transparency is the best approach here. When both parties share their position it leads to faster, more trusted negotiations. Examples of negotiation strategies can be found here.
+Perhaps contrary to the name, this section is important. Unfortunately, these details are often over-looked. That’s because it can be awkward to discuss some of the details, especially the budget. Transparency is the best approach here. When both parties share their position it leads to faster, more trusted negotiations. A good overview guide of negotiation strategies can be found [here](http://cdn-media.leanin.org/wp-content/uploads/2013/03/Negotiationfinal3.15.pdf).
 
 ##	Budget
 
@@ -98,7 +98,7 @@ Ideally, you should organize a payment schedule that benefits both parties. This
 
 Congratulations, you’re almost there! Getting here means you’ve found the right person and agreed to the terms of working together. However, the paperwork stage is often where things grind to a halt. You might not have a template or previous example to work with. You might need to work with your internal stakeholders (Procurement, Legal, HR). This can really hold up the process, especially if you’re trying to contract with an individual.
 
-As soon as you know you will be looking to bring in an external resource, you should start working to ensure that you have these documents and processes in place. This is where the benefit of a third-party marketplace (like Hillgate) is clear. You can engage the company as a vendor and, once completed, you can reengage consultants through the same channel without the hassle of additional paperwork.
+As soon as you know you will be looking to bring in an external resource, you should start working to ensure that you have these documents and processes in place. This is where the benefit of a third-party marketplace (like [Hillgate](www.hillgateconnect.com)) is clear. You can engage the company as a vendor and, once completed, you can reengage consultants through the same channel without the hassle of additional paperwork.
 
 ##	Terms and conditions (NDAs, etc.)
 

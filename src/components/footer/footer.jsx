@@ -11,7 +11,7 @@ var Footer = React.createClass({
           <p className="text-center FooterNotes">
             ©2013-2015 All Rights Reserved. Hillgate® is a registered trademark
             of Project Hillgate Ltd.
-            <a href="https://www.hillgateconnect.com/privacy">
+            <a href="https://www.hillgateconnect.com/privacy">{ }
               Privacy and Terms
             </a>
           </p>

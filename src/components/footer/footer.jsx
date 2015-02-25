@@ -9,8 +9,11 @@ var Footer = React.createClass({
         </a>
         <div className="source-org vcard copyright">
           <p className="text-center FooterNotes">
-            ©2013-2015 All Rights Reserved. Hillgate® is a registered trademark of The Hillgate Project.
-            <a href="https://www.hillgateconnect.com/privacy">Privacy and Terms</a>
+            ©2013-2015 All Rights Reserved. Hillgate® is a registered trademark
+            of Project Hillgate Ltd.
+            <a href="https://www.hillgateconnect.com/privacy">
+              Privacy and Terms
+            </a>
           </p>
         </div>
       </footer>

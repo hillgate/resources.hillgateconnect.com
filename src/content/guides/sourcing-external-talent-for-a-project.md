@@ -6,11 +6,11 @@ You have been given (or decided on) your strategic priorities. You know that the
 
 ##	A specific need or a lack of bandwidth
 
-A specific needs means that there is a critical requirement for your 	project and you don’t have the right skills or experience on the team. You 	may also have a lack of bandwidth, ie you have more work than you can 	reasonably do. In this case you’re likely looking for a smart person who 	can help you get more done.
+A specific needs means that there is a critical requirement for your 	project and you don’t have the right skills or experience on the team. You 	may also have a lack of bandwidth, i.e. you have more work than you can reasonably do; in this case you’re likely looking for a smart person who 	can help you get more done.
 
 ##	Write your project brief
 
-Be clear about the specific workstreams, expectations and deliverables 	that you need for this project to be a success. The time you spend getting 	this right will be repaid later via better staffing and fewer problems.
+Be clear about the specific workstreams, expectations and deliverables	that you need for this project to be a success. The time you spend getting 	this right will be repaid later via better staffing and fewer problems.
 
 ##	Identify the workstreams
 
@@ -20,7 +20,7 @@ Most projects have multiple subcomponents. You should be able to break down thes
 
 Next, you need to identify what you’re looking for at the end of the project. The deliverables can range from a financial model to a market research report depending on your needs.
 
-Once you have completed this section you should be able to clearly communicate what you’re looking for. This means you’re ready to looks for your candidate.
+Once you have completed this section you should be able to clearly communicate what you’re looking for. This means you’re ready to look for your candidate.
 
 #	Define the candidate criteria
 
@@ -34,7 +34,7 @@ The experience-level depends on the type of work you need. If you want someone t
 
 ##	Functional experience
 
-You should have a clear idea of what you’re looking for here. If you’re doing a due diligence project, then you’ll want someone who has worked in Investment Banking/Corporate Development (link to Ag project). If you’re researching a specific region/industry then having someone with relevant experience is important (link to China project).
+You should have a clear idea of what you’re looking for here. If you’re doing a [due diligence project](https://www.hillgateconnect.com/project/10033666), then you’ll want someone who has worked in Investment Banking/Corporate Development. If you’re researching a [specific region/industry](https://www.hillgateconnect.com/project/10655378) then having someone with relevant experience is important.
 
 ##	Industry experience
 
@@ -46,7 +46,7 @@ The degree of localization will depend on where you are in the process. For exam
 
 ## Language abilities
 
-Language is important if you require someone to interact with local participants or do research where most of the work is done in a native language. Unless you think there’s a difference between English and American, this is probably the easiest of the choices!
+Language is important if you require someone to interact with local participants or perform research where most of the work is done in a native language. Unless you think there’s a difference between English and American, this is probably the easiest of the choices!
 
 The goal in selecting your candidate is to find the best person who can help you achieve your goals. It is like dating- there’s rarely a perfect candidate, but there are many great matches. The goal is to find someone who complements your skills well and who you can work with. If you focus on that, then you will be successful.
 

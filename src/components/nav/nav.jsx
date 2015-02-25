@@ -12,15 +12,15 @@ var Nav = React.createClass({
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="https://www.hillgateconnect.com">
               <img src="http://d34i3ar4bnnqdn.cloudfront.net/img/hillgate-logo-black.png" className="HeaderLogo" />
             </a>
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <form className="navbar-form navbar-right">
               <div className="form-group">
-                <button type="submit" className="btn btn-default navbar-btn">Sign Up</button>
-                <button type="submit" className="btn btn-default navbar-btn">Log In</button>
+                <a href="https://www.hillgateconnect.com/sign-up" className="btn btn-default navbar-btn">Sign Up</a>
+                <a href="https://www.hillgateconnect.com/login" className="btn btn-default navbar-btn">Log In</a>
               </div>
             </form>
             <ul className="nav navbar-nav navbar-right">

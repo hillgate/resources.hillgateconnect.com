@@ -132,16 +132,20 @@ gulp.task 'content', ->
     .pipe(gulp.dest(join(paths.dist, 'content')))
 
 publisher = awspublish.create bucket: 'resources.hillgateconnect.com'
-gulp.task 'publish:html', ->
-  gulp.src("#{paths.dist}/**/*.html")
+gulp.task 'publish:bare', ->
+  gulp.src([
+    "#{paths.dist}/**/*.html"
+    "#{paths.dist}/**/*.md"
+  ])
     .pipe(awspublish.gzip())
     .pipe(publisher.publish('Cache-Control': 'max-age=600')) # 10 minutes
     .pipe(awspublish.reporter())
 
-gulp.task 'publish:else', ->
+gulp.task 'publish:revved', ->
   gulp.src([
     "#{paths.dist}/**/*"
     "!#{paths.dist}/**/*.html"
+    "!#{paths.dist}/**/*.md"
   ])
     .pipe(awspublish.gzip())
     .pipe(publisher.publish('Cache-Control': 'max-age=315360000')) # 10 years
@@ -151,6 +155,6 @@ gulp.task 'deploy', (callback) ->
   runSequence(
     ['dist:clean']
     ['dist', 'content']
-    ['publish:html', 'publish:else']
+    ['publish:bare', 'publish:revved']
     callback
   )

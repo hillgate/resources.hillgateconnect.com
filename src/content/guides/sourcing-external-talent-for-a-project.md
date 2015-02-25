@@ -1,4 +1,4 @@
-This goal of this guide is to help you plan, source and work with external talent. Many of these suggestions will help you source internal candidates as well. This guide is based on our experience running Hillgate and working on both sides of the client-consultant relationship over the years.
+This goal of this guide is to help you plan, source and work with external talent. Many of these suggestions will help you source internal candidates as well. This guide is based on our experience running [Hillgate](hillgateconnect.com) and working on both sides of the client-consultant relationship over the years.
 
 #	Identify and communicate the need
 

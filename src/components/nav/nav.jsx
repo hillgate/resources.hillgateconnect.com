@@ -24,13 +24,13 @@ var Nav = React.createClass({
               </div>
             </form>
             <ul className="nav navbar-nav navbar-right">
-              <li><a href="#">Why use Hillgate</a>
+              <li><a href="https://www.hillgateconnect.com/home#why-use-hillgate">Why use Hillgate</a>
               </li>
-              <li><a href="#">How it works</a>
+              <li><a href="https://www.hillgateconnect.com/home#how-does-hillgate-work">How it works</a>
               </li>
-              <li><a href="#">Our consultants</a>
+              <li><a href="https://www.hillgateconnect.com/home#our-consultants">Our consultants</a>
               </li>
-              <li><a href="#">Case studies</a>
+              <li><a href="https://www.hillgateconnect.com/home#case-studies">Case studies</a>
               </li>
             </ul>
           </div>

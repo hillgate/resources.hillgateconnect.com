@@ -4,7 +4,7 @@ var Footer = React.createClass({
   render: function() {
     return (
       <footer className="Footer">
-        <a href="#">
+        <a href="http://www.hillgateconnect.com">
           <img src="http://d34i3ar4bnnqdn.cloudfront.net/img/hillgate-logo-black.png" className="FooterLogo center-block" />
         </a>
         <div className="source-org vcard copyright">

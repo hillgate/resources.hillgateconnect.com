@@ -136,7 +136,6 @@ gulp.task 'publish:html', ->
   gulp.src("#{paths.dist}/**/*.html")
     .pipe(awspublish.gzip())
     .pipe(publisher.publish('Cache-Control': 'max-age=600')) # 10 minutes
-    .pipe(publisher.cache())
     .pipe(awspublish.reporter())
 
 gulp.task 'publish:else', ->
@@ -146,7 +145,6 @@ gulp.task 'publish:else', ->
   ])
     .pipe(awspublish.gzip())
     .pipe(publisher.publish('Cache-Control': 'max-age=315360000')) # 10 years
-    .pipe(publisher.cache())
     .pipe(awspublish.reporter())
 
 gulp.task 'deploy', (callback) ->

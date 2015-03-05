@@ -1,8 +1,11 @@
 var _ = require('lodash');
+var moment = require('moment');
 var React = require('react');
+var request = require('superagent')
 
 var cdnUrl = 'http://d34i3ar4bnnqdn.cloudfront.net';
-var marketingUrl = 'https://www.hillgateconnect.com';
+var marketingUrl = 'http://localhost:5000';
+var apiUrl = 'http://localhost:5000';
 
 var Nav = React.createClass({
   render: function() {
@@ -35,43 +38,33 @@ var NavHeader = React.createClass({
 
 var NavRight = React.createClass({
   getInitialState: function() {
-    return {
-      loggedIn: 'UNKNOWN'
-    };
+    return {data: {loggedIn: null}};
   },
   componentDidMount: function() {
-    $.ajax({
-      type: 'GET',
-      url: 'http://localhost:5000/api/user',
-      xhrFields: {
-        withCredentials: true
-      },
-      success: (function(_this) {
-        return function(response) {
-          console.log('success!');
-          console.log(response);
-          return _this.setState({
-            loggedIn: 'LOGGED_IN'
-          });
+    request
+      .get(apiUrl + '/api/ping')
+      .withCredentials()
+      .end((function(_this) {
+        return function(err, response) {
+          if (err) {
+            _this.setState({data: {loggedIn: false}});
+          } else {
+            _this.setState({data: response.body});
+          }
         };
-      })(this),
-      error: (function(_this) {
-        return function(error) {
-          console.log('ERROR:', error);
-          return _this.setState({
-            loggedIn: 'LOGGED_OUT'
-          });
-        };
-      })(this)
-    });
+      })(this));
   },
   render: function() {
-    var componentMap = {
-      UNKNOWN: null,
-      'LOGGED_OUT': <NavRightLoggedOut />,
-      'LOGGED_IN': <NavRightLoggedIn />
+
+    // This leaves a null value for the component if loggedIn is null so that
+    // we have nothing rendered until the XHR request completes.
+    var navRightComponent = null;
+    if (this.state.data.loggedIn === true) {
+      navRightComponent = <NavRightLoggedIn data={this.state.data} />;
+    } else if (this.state.data.loggedIn === false) {
+      navRightComponent = <NavRightLoggedOut />;
     }
-    var navRightComponent = componentMap[this.state.loggedIn];
+
     return (
       <div className="Nav--Right collapse navbar-collapse" id="MainNav">
         {navRightComponent}
@@ -82,39 +75,120 @@ var NavRight = React.createClass({
 
 var NavRightLoggedIn = React.createClass({
   render: function() {
+    var data = this.props.data;
     return (
       <div className="Nav--Right--LoggedIn">
         <ul className="nav navbar-nav navbar-right">
-          <li className="dropdown">
-            <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            <i className="fa fa-lg fa-envelope-o"></i>
-            </a>
-            <ul className="dropdown-menu" role="menu">
-              <li><a href="#">View All Messages</a></li>
-            </ul>
-          </li>
-          <li className="dropdown">
-            <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              <img className="Avatar" src='http://www.gravatar.com/avatar/5de6f1cb6fd7ac5b94065f70a00b0cfc.png' />
-            </a>
-            <ul className="dropdown-menu" role="menu">
-              <li><a href="/dashboard">
-                <i className="fa fa-fw fa-dashboard"></i> Dashboard
-              </a></li>
-              <li><a href="/my-profile">
-                <i className="fa fa-fw fa-user"></i> My profile
-              </a></li>
-              <li><a href="/account-settings">
-                <i className="fa fa-fw fa-gear"></i> Account settings
-              </a></li>
-              <li className="divider"></li>
-              <li><a href="/logout">
-                <i className="fa fa-fw fa-beer"></i> Sign out
-              </a></li>
-            </ul>
-          </li>
+          <NavMessageDropdown unreadMessages={data.user.unreadMessages}/>
+          <NavUserDropdown isAdmin={data.isAdmin} profilePicture={data.user.profilePicture} />
         </ul>
       </div>
+    );
+  }
+});
+
+var NavMessageDropdown = React.createClass({
+  render: function() {
+
+    // Unread message count goes in a badge
+    var badge = null;
+    if (this.props.unreadMessages.length > 0) {
+      badge = <span className="Badge">{this.props.unreadMessages.length}</span>
+    };
+
+    // Unread messages are listed in a dropbox with a link to all messages.
+    var messageItems = this.props.unreadMessages.map(function (message) {
+      return (
+        <NavMessageItem message={message} />
+      );
+    });
+    messageItems.push([(<li><a href="#">View All Messages</a></li>)]);
+
+    return (
+      <li className="dropdown">
+        <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+        <i className="fa fa-lg fa-envelope-o"></i>
+        {badge}
+        </a>
+        <ul className="dropdown-menu" role="menu">
+          {messageItems}
+        </ul>
+      </li>
+    );
+  }
+});
+
+
+var NavMessageItem = React.createClass({
+  render: function() {
+    var formattedDate = moment(this.props.message.sentDate).format('ll');
+    return (
+      <li>
+        <a href={"/messages/" + this.props.message.senderId}>
+          <div className="NavMessageItem">
+            <div className="NavMessageItem--Header">
+              {this.props.message.senderDisplayName}
+              <div className="NavMessageItem--Date">{formattedDate}</div>
+            </div>
+            <div className="NavMessageItem--Body">
+              <span className="fa-stack fa-lg">
+                <i className="fa fa-circle fa-stack-2x"></i>
+                <i className="fa fa-quote-right fa-stack-1x fa-inverse"></i>
+              </span>{' '}
+              {this.props.message.body}
+            </div>
+          </div>
+        </a>
+      </li>
+    );
+  }
+});
+
+var NavUserDropdown = React.createClass({
+  render: function() {
+
+    var avatarUrl = this.props.profilePicture || 'https://res.cloudinary.com/wemeetup/image/upload/v1364306561/user_uwcrts.jpg';
+
+    // This part seems rather silly. I would think it's possible to do a more
+    // straightforward handlebars style {#if} sort of thing. Instead we build
+    // up the list the hard way.
+    var listItems = [
+      (<li><a href="/dashboard">
+        <i className="fa fa-fw fa-dashboard"></i> Dashboard
+       </a></li>),
+      (<li><a href="/my-profile">
+        <i className="fa fa-fw fa-user"></i> My profile
+       </a></li>),
+      (<li><a href="/account-settings">
+        <i className="fa fa-fw fa-gear"></i> Account settings
+       </a></li>)
+    ];
+    if (this.props.isAdmin) {
+      listItems.push([
+        (<li className="divider"></li>),
+        (<li><a href="/members">Members</a></li>),
+        (<li><a href="/applications">Applications</a></li>),
+        (<li><a href="/new-project">New project</a></li>),
+        (<li><a href="/companies">Companies</a></li>),
+        (<li><a href="/discount-codes">Discount codes</a></li>)
+      ]);
+    }
+    listItems.push([
+      (<li className="divider"></li>),
+      (<li><a href="/logout">
+        <i className="fa fa-fw fa-beer"></i> Sign out
+      </a></li>)
+    ]);
+
+    return (
+      <li className="dropdown">
+        <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+          <img className="Avatar" src={avatarUrl} />
+        </a>
+        <ul className="dropdown-menu" role="menu">
+          {listItems}
+        </ul>
+      </li>
     );
   }
 });

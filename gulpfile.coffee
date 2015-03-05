@@ -41,11 +41,12 @@ paths.static = [
   'bower_components/jquery/dist/jquery.js'
   'bower_components/jquery-sticky/jquery.sticky.js'
   'bower_components/uikit/js/uikit.js'
+  'node_modules/bootstrap/js/dropdown.js'
 
   join('!', paths.src, '**/*.less')
   join('!', paths.src, '**/*.js')
 ]
-paths.css = join(paths.src, 'css/*.less')
+paths.css = join(paths.src, '**/*.less')
 paths.js = join(paths.src, 'js/app.js')
 
 # development

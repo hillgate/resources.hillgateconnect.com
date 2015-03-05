@@ -9,9 +9,9 @@ renderer.heading = function (text, level) {
 
   return '<h' + level + ' id="' + escapedText + '"><a name="' +
     escapedText +
-    '" class="anchor" href="#' +
+    '" className="anchor" href="#' +
     escapedText +
-    '"><span class="header-link"></span></a>' +
+    '"><span className="header-link"></span></a>' +
     text + '</h' + level + '>';
 };
 
